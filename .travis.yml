@@ -1,5 +1,12 @@
 language: java
 sudo: false # faster builds
+deploy:
+  provider: releases
+  api_key: "8b5ef8b52126660941e00f7e5933b8cf480f28cc"
+  file: "target/prometheus.hpi"
+  skip_cleanup: true
+  on:
+    tags: true
 
 script: "mvn clean package hpi:hpi"
 
